@@ -1,0 +1,19 @@
+[user]
+	email = twichai4869@gmail.com
+	name = twichai
+
+[alias]
+    st = status
+    co = checkout
+    ci = commit
+    br = branch
+    lg = log --oneline --graph --decorate
+    last = log -1 HEAD
+    re = reset HEAD --soft HEAD~1
+    amend = commit --amend --no-edit
+
+[color]
+    ui = auto
+
+[push]
+    default = current
