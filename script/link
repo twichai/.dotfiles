@@ -1,0 +1,36 @@
+#!/bin/bash
+
+# Set dotfiles directory
+DOTFILES_DIR="$HOME/.dotfiles"
+
+# List of dotfiles to link (edit this list)
+FILES=(
+    .gitconfig
+    .zsh_personal
+    .tmux.conf
+)
+
+# Loop through each file and create a symlink
+for file in "${FILES[@]}"; do
+    SOURCE="$DOTFILES_DIR/$file"
+    TARGET="$HOME/$file"
+
+    # Backup existing file if it exists
+    if [ -e "$TARGET" ] && [ ! -L "$TARGET" ]; then
+        echo "Backing up $TARGET to $TARGET.backup"
+        mv "$TARGET" "$TARGET.backup"
+    fi
+
+    # Remove old symlink if it exists
+    if [ -L "$TARGET" ]; then
+        echo "Removing old symlink $TARGET"
+        rm "$TARGET"
+    fi
+
+    # Create new symlink
+    echo "Linking $SOURCE -> $TARGET"
+    ln -s "$SOURCE" "$TARGET"
+done
+
+echo "✅ Done linking dotfiles."
+

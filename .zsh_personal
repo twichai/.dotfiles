@@ -1,0 +1,11 @@
+# Editor
+alias v="vim"
+
+# Clear terminal
+alias c="clear"
+
+# Update system (for Debian/Ubuntu)
+alias update="sudo apt update && sudo apt upgrade"
+
+# Reload shell
+alias reload="source ~/.zshrc"  
