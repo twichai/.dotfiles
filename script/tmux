@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# Exit if any command fails
+set -e
+
+# Ask for sudo once
+echo "🔐 Requesting sudo access..."
+sudo -v
+
+# Keep sudo alive
+( while true; do sudo -n true; sleep 60; done ) &
+SUDO_PID=$!
+trap 'kill $SUDO_PID' EXIT
+
+echo "🔧 Updating package list..."
+sudo apt update
+
+echo "📦 Installing tmux..."
+sudo apt install -y tmux
+
