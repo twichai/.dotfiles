@@ -20,4 +20,8 @@ rm -rf squashfs-root nvim-linux-x86_64.appimage
 echo "Installing alacritty..."
 sudo apt install -y alacritty
 
+echo "Install fzf"
+sudo apt install fzf
+
+
 echo "Installation process finished! 🎉"

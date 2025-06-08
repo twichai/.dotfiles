@@ -8,6 +8,7 @@ FILES=(
     .gitconfig
     .zsh_personal
     .tmux.conf
+    .config/nvim
 )
 
 # Loop through each file and create a symlink

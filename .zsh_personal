@@ -9,3 +9,31 @@ alias update="sudo apt update && sudo apt upgrade"
 
 # Reload shell
 alias reload="source ~/.zshrc"  
+
+fh() {
+  print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed -E 's/ *[0-9]*\*? *//' | sed -E 's/\\/\\\\/g')
+}
+
+# Where to save the history file
+HISTFILE=~/.zsh_history
+
+# How many commands to remember in memory (current session)
+HISTSIZE=10000
+
+# How many commands to save to the file
+SAVEHIST=10000
+
+# Add to the history file, don't overwrite it
+setopt APPEND_HISTORY
+
+# Share history between all open terminals instantly
+setopt SHARE_HISTORY
+
+# Save commands as soon as they are run
+setopt INC_APPEND_HISTORY
+
+# Don't save duplicate commands one after another
+setopt HIST_IGNORE_DUPS
+
+# Don't save commands that start with a space
+setopt HIST_IGNORE_SPACE
