@@ -118,6 +118,15 @@ vim.schedule(function()
   vim.o.clipboard = 'unnamedplus'
 end)
 
+-- expand tab input with spaces characters
+vim.o.expandtab = true
+-- syntax aware indentations for newline inserts
+vim.o.smartindent = true
+-- num of space characters per tab
+vim.o.tabstop = 2
+-- spaces per indentation level
+vim.o.shiftwidth = 2
+
 -- Enable break indent
 vim.o.breakindent = true
 
