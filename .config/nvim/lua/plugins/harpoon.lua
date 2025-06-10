@@ -28,6 +28,7 @@ return {
       },
     }
 
+    name = {'m', ',', '.', '/'}
     for i = 1, 5 do
       table.insert(keys, {
         "<leader>" .. i,
