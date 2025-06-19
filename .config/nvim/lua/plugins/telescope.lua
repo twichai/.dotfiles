@@ -2,6 +2,14 @@ return {
 	"nvim-telescope/telescope.nvim",
 	branch = "0.1.x",
 	dependencies = { "nvim-lua/plenary.nvim" },
+	opts = {
+		defaults = {
+			file_ignore_patterns = {
+				"node_modules", -- ignore node_modules
+				"dist", -- optional: ignore build output
+			},
+		},
+	},
 	keys = {
 		{ "<leader>sh", "<cmd>Telescope help_tags<cr>", desc = "[S]earch [H]elp" },
 		{ "<leader>sf", "<cmd>Telescope find_files<cr>", desc = "[S]earch [F]iles" },
