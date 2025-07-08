@@ -1,0 +1,22 @@
+---
+- name: Set up development environment
+  hosts: localhost
+  become: yes
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+
+    - name: Install required packages
+      apt:
+        name:
+          - neovim
+          - zsh
+          - tmux
+          - sway
+          - curl
+          - git
+          - wezterm
+        state: present
+
+
