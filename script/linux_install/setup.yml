@@ -16,7 +16,15 @@
           - sway
           - curl
           - git
-          - wezterm
         state: present
 
 
+    - name: Clone and install WezTerm
+      shell: |
+        git clone --depth=1 https://github.com/wez/wezterm.git
+        cd wezterm
+        ./get-deps
+        ./build
+      args:
+        executable: /bin/bash
+      when: ansible_distribution == "Ubuntu"
