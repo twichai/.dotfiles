@@ -32,8 +32,9 @@
     - name: Extract Neovim if no FUSE
       shell: |
         ./nvim.appimage --appimage-extract
-        cp squashfs-root/usr/bin/nvim /usr/local/bin/nvim
-        chmod +x /usr/local/bin/nvim
+        cp squashfs-root/usr/bin/nvim ~/.local/share/nvim
+
+        chmod +x ~/.local/share/nvim
       args:
         chdir: /usr/local/bin
 
