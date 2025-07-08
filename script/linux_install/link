@@ -9,6 +9,7 @@ FILES=(
     .zsh_personal
     .tmux.conf
     .config/nvim
+    .config/sway
 )
 
 # Loop through each file and create a symlink
