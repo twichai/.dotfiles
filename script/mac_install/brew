@@ -1,0 +1,6 @@
+#!/bin/bash
+
+brew install zsh tmux curl git neovim fzf zoxide
+brew install --cask wezterm
+
+echo "Installation process finished! 🎉"
