@@ -280,7 +280,7 @@ return {
 					-- HTML/CSS (for frontend)
 					"html",
 					"cssls",
-					"emmet-language-server",
+					"emmet_language_server",
 					-- JSON/YAML
 					"jsonls",
 					"yamlls",
