@@ -16,6 +16,7 @@ alias ta='tmux attach || tmux new'
 alias tl='tmux ls'
 alias tk='tmux kill-server'
 
+eval "$(zoxide init zsh)"
 f() {
   cd "$(zoxide query -ls | fzf | awk '{print $2}')"
 }
