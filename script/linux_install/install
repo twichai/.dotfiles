@@ -16,15 +16,14 @@ TMP_DIR=$(mktemp -d)
 cd "$TMP_DIR"
 
 echo "Downloading Neovim AppImage..."
-curl -L -o nvim.appimage https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.appimage
-chmod +x nvim.appimage
+curl -L -o nvim.tar.gz https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
 
-echo "Extracting Neovim AppImage..."
-./nvim.appimage --appimage-extract
+echo "Extracting Neovim..."
+tar xzvf nvim.tar.gz
 
 echo "Installing Neovim to ~/.local/share/nvim..."
-cp squashfs-root/usr/bin/nvim ~/.local/share/nvim/
-chmod +x ~/.local/share/nvim/nvim
+sudo cp -rf nvim-linux-x86_64 /opt/
+sudo ln -sf /opt/nvim-linux-x86_64/bin/nvim /usr/bin/
 
 echo "Cleaning up..."
 cd ~
